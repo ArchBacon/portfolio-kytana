@@ -30,5 +30,5 @@ $uploads = glob('public/uploads/*.{jpg,jpeg,png}', GLOB_BRACE);
 /** @noinspection PhpUnhandledExceptionInspection */
 echo $twig->render('gallery/index.html.twig', [
     'images' => $images,
-    'hasUploads' => count($uploads) === 0,
+    'hasUploads' => count($uploads) > 0,
 ]);
