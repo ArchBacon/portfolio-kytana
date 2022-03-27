@@ -11,13 +11,13 @@
         {% for key, url in images %}
             {% if key == compare %}
                 <div class="grid-item span-2">
-                    <img src="{{ url }}/400" alt="">
+                    <img src="{{ url }}" alt="">
                 </div>
                 {% set compare = compare + big_array[count] %}
                 {% set count = count + 1 %}
             {% else %}
                 <div class="grid-item">
-                    <img src="{{ url }}/200" alt="">
+                    <img src="{{ url }}" alt="">
                 </div>
             {% endif %}
 

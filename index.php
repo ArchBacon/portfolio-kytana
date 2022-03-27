@@ -5,16 +5,18 @@ declare(strict_types=1);
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Twig\Environment;
+use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
 
 $loader = new FilesystemLoader(__DIR__ . '/templates');
-$twig = new Environment($loader);
+$twig = new Environment($loader, [
+    'debug' => true
+]);
+$twig->addExtension(new DebugExtension());
 
-$images = [];
 
-for ($i = 0; $i < 100; $i++) {
-    $images[$i] = sprintf('https://picsum.photos/seed/%d', $i);
-}
+/** @var array<int, string> $images */
+$images = glob('public/uploads/*.jpg');
 
 /** @noinspection PhpUnhandledExceptionInspection */
 echo $twig->render('gallery/index.html.twig', [
