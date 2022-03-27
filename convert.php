@@ -8,8 +8,8 @@ foreach ($images as $image) {
     $uniqId = uniqid('', false);
     $extension = preg_replace('#\?.*#', '', pathinfo($image, PATHINFO_EXTENSION));
 
-    make_thumbnail_from_png($image, 200, 200, "public/thumbnail/200x200_$uniqId.$extension", 0);
-    make_thumbnail_from_png($image, 400, 400, "public/thumbnail/400x400_$uniqId.$extension", 0);
+    make_thumbnail_from_png($image, 200, 200, "public/thumbnail/200x200_$uniqId.$extension", -1);
+    make_thumbnail_from_png($image, 400, 400, "public/thumbnail/400x400_$uniqId.$extension", -1);
     rename($image, "public/images/$uniqId.$extension");
 }
 
@@ -19,10 +19,12 @@ foreach ($images as $image) {
     $uniqId = uniqid('', false);
     $extension = preg_replace('#\?.*#', '', pathinfo($image, PATHINFO_EXTENSION));
 
-    make_thumbnail_from_jpeg($image, 200, 200, "public/thumbnail/200x200_$uniqId.$extension", 0);
-    make_thumbnail_from_jpeg($image, 400, 400, "public/thumbnail/400x400_$uniqId.$extension", 0);
+    make_thumbnail_from_jpeg($image, 200, 200, "public/thumbnail/200x200_$uniqId.$extension", -1);
+    make_thumbnail_from_jpeg($image, 400, 400, "public/thumbnail/400x400_$uniqId.$extension", -1);
     rename($image, "public/images/$uniqId.$extension");
 }
+
+header('Location: /');
 
 function make_thumbnail_from_png(string $thumb_target, int $width = 60, ?int $height = null, ?string $SetFileName = null, int $quality = 8): void
 {
