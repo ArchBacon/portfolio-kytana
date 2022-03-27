@@ -16,7 +16,7 @@ $twig->addExtension(new DebugExtension());
 
 
 /** @var array<int, string> $images */
-$images = glob('public/uploads/*.jpg');
+$images = glob('public/uploads/*.{jpg,jpeg,png,gif,webp}', GLOB_BRACE);
 
 /** @noinspection PhpUnhandledExceptionInspection */
 echo $twig->render('gallery/index.html.twig', [
