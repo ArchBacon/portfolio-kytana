@@ -30,7 +30,7 @@ dump($uploads);
 echo count($uploads);
 
 /** @noinspection PhpUnhandledExceptionInspection */
-echo $twig->render('gallery/index.html.twig', [
-    'images' => $images,
-    'hasUploads' => count($uploads) > 0,
-]);
+//echo $twig->render('gallery/index.html.twig', [
+//    'images' => $images,
+//    'hasUploads' => count($uploads) > 0,
+//]);
