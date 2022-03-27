@@ -12,7 +12,7 @@ use Twig\Loader\FilesystemLoader;
 
 $loader = new FilesystemLoader(__DIR__ . '/templates');
 $twig = new Environment($loader, [
-    'debug' => false,
+    'debug' => true,
     'strict_variables' => true,
 ]);
 $twig->addExtension(new DebugExtension());
@@ -26,7 +26,6 @@ foreach ($result as $image) {
 
 /** @var array<int, string> $uploads */
 $uploads = glob('public/uploads/*.{jpg,jpeg,png}', GLOB_BRACE);
-dump($uploads);
 
 /** @noinspection PhpUnhandledExceptionInspection */
 echo $twig->render('gallery/index.html.twig', [

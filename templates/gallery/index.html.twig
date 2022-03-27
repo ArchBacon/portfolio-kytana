@@ -3,7 +3,7 @@
 {% block title %}Gallery{% endblock %}
 
 {% block body %}
-    {% if hasUploads == true %}
+    {% if hasUploads is true %}
         <a href="/convert.php">You have unconverted images, click here to add them to the gallery</a>
     {% endif %}
     <div class="grid">
