@@ -1,7 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GalleryController!{% endblock %}
+{% block title %}Gallery{% endblock %}
 
 {% block body %}
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="grid">
+        {% set big_array = [4, 8, 3, 5, 8, 9] %}
+        {% set count = 0 %}
+        {% set compare = 0 %}
+
+        {% for key, url in images %}
+            {% if key == compare %}
+                <div class="grid-item span-2">
+                    <img src="{{ url }}/400" alt="">
+                </div>
+                {% set compare = compare + big_array[count] %}
+                {% set count = count + 1 %}
+            {% else %}
+                <div class="grid-item">
+                    <img src="{{ url }}/200" alt="">
+                </div>
+            {% endif %}
+
+            {% if count > 5 %}
+                {% set count = 0 %}
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock %}
