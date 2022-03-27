@@ -1,0 +1,8 @@
+{
+    "devDependencies": {
+        "tailwindcss": "^3.0.23"
+    },
+    "scripts": {
+        "dev": "tailwindcss -i ./assets/app.css -o ./public/app.css  --minify --watch"
+    }
+}

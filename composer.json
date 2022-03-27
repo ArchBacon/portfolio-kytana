@@ -1,0 +1,16 @@
+{
+    "name": "archbacon/portolio-kytana",
+    "description": "Portfolio for displaying art",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4",
+        "twig/twig": "3.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.4"
+    },
+    "scripts": {
+        "phpstan": "vendor/bin/phpstan analyse"
+    }
+}
