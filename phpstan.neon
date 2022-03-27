@@ -1,6 +1,9 @@
 parameters:
-    level: 6
+    level: max
     paths:
         - ./
     excludePaths:
         - vendor
+includes:
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
