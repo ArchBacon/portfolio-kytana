@@ -26,6 +26,8 @@ foreach ($result as $image) {
 
 /** @var array<int, string> $uploads */
 $uploads = glob('public/uploads/*.{jpg,jpeg,png}', GLOB_BRACE);
+dump($uploads);
+echo count($uploads);
 
 /** @noinspection PhpUnhandledExceptionInspection */
 echo $twig->render('gallery/index.html.twig', [
