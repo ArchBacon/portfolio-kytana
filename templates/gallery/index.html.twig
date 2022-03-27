@@ -3,6 +3,9 @@
 {% block title %}Gallery{% endblock %}
 
 {% block body %}
+    {% if hasUploads %}
+        <a href="/convert.php">You have unconverted images, click here to add them to the gallery</a>
+    {% endif %}
     <div class="grid">
         {% set big_array = [4, 8, 3, 5, 8, 9] %}
         {% set count = 0 %}
