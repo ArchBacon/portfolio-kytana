@@ -14,9 +14,12 @@ $twig = new Environment($loader, [
 ]);
 $twig->addExtension(new DebugExtension());
 
-
-/** @var array<int, string> $images */
-$images = glob('public/uploads/*.{jpg,jpeg,png,gif,webp}', GLOB_BRACE);
+/** @var array<int, string> $result */
+$result = glob('public/images/*.{jpg,jpeg,png}', GLOB_BRACE);
+$images = [];
+foreach ($result as $image) {
+    $images[] = pathinfo($image)['basename'];
+}
 
 /** @noinspection PhpUnhandledExceptionInspection */
 echo $twig->render('gallery/index.html.twig', [

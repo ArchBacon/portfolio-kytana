@@ -8,16 +8,16 @@
         {% set count = 0 %}
         {% set compare = 0 %}
 
-        {% for key, url in images %}
+        {% for key, filename in images %}
             {% if key == compare %}
                 <div class="grid-item span-2">
-                    <a href="{{ url }}" target="_blank"><img src="{{ url }}" alt=""></a>
+                    <a href="public/images/{{ filename }}" target="_blank"><img src="public/thumbnail/400x400_{{ filename }}" alt=""></a>
                 </div>
                 {% set compare = compare + big_array[count] %}
                 {% set count = count + 1 %}
             {% else %}
                 <div class="grid-item">
-                    <a href="{{ url }}" target="_blank"><img src="{{ url }}" alt=""></a>
+                    <a href="public/images/{{ filename }}" target="_blank"><img src="public/thumbnail/200x200_{{ filename }}" alt=""></a>
                 </div>
             {% endif %}
 

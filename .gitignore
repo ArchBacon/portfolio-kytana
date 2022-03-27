@@ -2,3 +2,5 @@
 /node_modules
 /vendor
 /public/uploads
+/public/thumbnail
+/public/images
